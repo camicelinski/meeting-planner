@@ -4,6 +4,15 @@ const initState = {
 
 const reducer = (state = initState, action) => {
   switch(action.type) {
+    case 'loadMeetings':
+      const { meetings } = action.payload
+      return { ...state, meetings }
+    case 'saveMeeting':
+      const { meeting } = action.payload
+      return { ...state, meeting }
+    case 'removeMeeting':
+      const { id } = action.payload
+      return { ...state, meetings: state.meetings.filter((meeting) => meeting.id !== id) }
     default:
       return state
   }
