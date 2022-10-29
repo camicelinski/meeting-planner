@@ -2,18 +2,25 @@ import React from 'react';
 
 import CalendarItem from './CalendarItem';
 
-class CalendarList extends React.Component {   
-    render() {
-        return <ul>{ this.renderMeetingsList() }</ul>
+const CalendarList = props => {
+    const { meetings, deleteMeeting, ...otherProps } = props 
+
+    const renderMeetingsList = () => {
+        const sortedMeetings = meetings.sort((a, b) => new Date(b.date) - new Date(a.date))
+        return sortedMeetings.map(item => {
+                return (
+                    <CalendarItem
+                        key={item.id}
+                        item={item}                    
+                        deleteMeeting={deleteMeeting}
+                    />
+                )
+            })                   
     }
 
-    renderMeetingsList() {
-        return this.props.meetings
-            .sort((a, b) => new Date(b.date) - new Date(a.date))
-            .map(item => 
-                <CalendarItem item={item} key={item.id} />
-            )
-    }
+    return (
+        <ul>{ renderMeetingsList() }</ul>
+    )   
 }
 
 export default CalendarList

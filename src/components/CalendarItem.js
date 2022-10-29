@@ -1,19 +1,12 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendarDays, faClock, faTrash } from '@fortawesome/free-solid-svg-icons'
 
 import Button from './Button'
-import { removeMeetingAction } from '../actions/calendar'
 
-export class CalendarItem extends React.Component {
-  removeMeeting = id => {
-    this.props.removeMeeting(id)
-  }
-
+class CalendarItem extends React.Component {  
   render() {
-    const { item } = this.props
+    const { item, deleteMeeting } = this.props
 
     return (
       <li
@@ -26,7 +19,7 @@ export class CalendarItem extends React.Component {
           <span className='meeting__time'><FontAwesomeIcon icon={faClock} className='meeting__icon' />{item.time}</span>
         </div>   
         <Button 
-          onClick={() => this.props.removeMeeting(item.id)}
+          onClick={() => deleteMeeting(item.id)}
           className='btn btn--delete'
         >
           delete
@@ -36,15 +29,15 @@ export class CalendarItem extends React.Component {
     )
   }  
 }
-
-const mapStateToProps = state => {
+/*
+const mapStateToProps = (state, props) => {
   return {
     meetings: state.meetings
   }
 }
 
 const mapActionToProps = {
-  removeMeeting: removeMeetingAction
+  deleteMeeting: removeMeetingAction
 }
 
 CalendarItem.propTypes = {
@@ -52,5 +45,5 @@ CalendarItem.propTypes = {
   deleteMeeting: PropTypes.func,
   className: PropTypes.string
 }
-
-export default connect(mapStateToProps, mapActionToProps)(CalendarItem)
+*/
+export default CalendarItem

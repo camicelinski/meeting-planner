@@ -1,61 +1,46 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { loadMeetingsAction, saveMeetingAction } from '../actions/calendar';
+import { loadMeetingsAction, saveMeetingAction, removeMeetingAction } from '../actions/calendar';
 import CalendarList from './CalendarList'
-import CalendarForm from './CalendarForm';
+import CalendarForm from './CalendarForm'
+import CalendarAPI from '../providers/calendarProvider';
 
 class Calendar extends React.Component {
-    apiUrl = 'http://localhost:3005/meetings';
-
-    loadMeetingsFromApi() {
-        fetch(this.apiUrl)
-            .then(resp => {
-                if(resp.ok) {
-                    return resp.json()
-                }
-                
-                throw new Error('Network error!');
-            })
-            .then(resp => {
-                this.props.loadMeetings(resp)
-            })
-            .catch(err => {
-                console.error(err);
-            });
-    }
+    calendarProvider = new CalendarAPI()
 
     sendMeetingToApi = (meetingData) => {
-        fetch(this.apiUrl, {
-            method: 'POST',
-            body: JSON.stringify(meetingData),
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })
-            .then(resp => {
-                if(resp.ok) {
-                    return resp.json()
-                }
-                
-                throw new Error('Network error!');
-            })
+        this.calendarProvider.add(meetingData)
             .then(meetingData => {
                 this.props.addMeetingToState(meetingData);
             })
-            .catch(err => {
-                console.log(err);
-            });
     }
 
-    componentDidMount() {
-        this.loadMeetingsFromApi();
+    loadMeetingsList = () => {
+        this.calendarProvider.load()
+            .then((meetings) => {
+                this.props.loadMeetings(meetings)
+            })
+    }
+
+    componentDidMount = () => {
+        this.loadMeetingsList()
+    }
+
+    deleteMeeting = (id) => {
+        this.calendarProvider.remove(id)            
+            .then(() => {
+                this.loadMeetingsList()
+            })    
     }
 
     render() {
         return (
             <section>
-                <CalendarList meetings={ this.props.meetings } />
+                <CalendarList 
+                    meetings={ this.props.meetings }
+                    deleteMeeting={ this.deleteMeeting }
+                />
                 <CalendarForm saveMeeting={ this.sendMeetingToApi }/>
             </section>
         )
@@ -70,7 +55,8 @@ const mapStateToProps = (state, props) => {
 
 const mapActionToProps = {
     loadMeetings: loadMeetingsAction,
-    addMeetingToState: saveMeetingAction
+    addMeetingToState: saveMeetingAction,
+    deleteMeeting: removeMeetingAction
 }
 
 export default connect(
