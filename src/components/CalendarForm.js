@@ -1,7 +1,7 @@
 import React from 'react';
 
-import TextField from './TextField';
-import Button from './Button'
+import TextField from './FormField';
+import Button from './Button/Button'
 import formFields from '../data/formFieldsData'
 
 class CalendarForm extends React.Component {

@@ -1,6 +1,8 @@
 import React from 'react';
 
-import CalendarItem from './CalendarItem';
+import CalendarItem from '../CalendarItem';
+
+import StyledCalendarList from './CalendarList.styled';
 
 const CalendarList = props => {
     const { meetings, deleteMeeting, ...otherProps } = props 
@@ -19,7 +21,7 @@ const CalendarList = props => {
     }
 
     return (
-        <ul>{ renderMeetingsList() }</ul>
+        <StyledCalendarList>{ renderMeetingsList() }</StyledCalendarList>
     )   
 }
 

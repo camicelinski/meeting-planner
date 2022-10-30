@@ -1,10 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { loadMeetingsAction, saveMeetingAction, removeMeetingAction } from '../actions/calendar';
-import CalendarList from './CalendarList'
-import CalendarForm from './CalendarForm'
-import CalendarAPI from '../providers/calendarProvider';
+import { loadMeetingsAction, saveMeetingAction, removeMeetingAction } from '../../actions/calendar';
+import Header from '../Header/Header';
+import CalendarList from '../CalendarList/CalendarList';
+import CalendarForm from '../CalendarForm'
+import CalendarAPI from '../../providers/calendarProvider';
+
+import StyledCalendar from './Calendar.styled';
 
 class Calendar extends React.Component {
     calendarProvider = new CalendarAPI()
@@ -36,13 +39,19 @@ class Calendar extends React.Component {
 
     render() {
         return (
-            <section>
-                <CalendarList 
-                    meetings={ this.props.meetings }
-                    deleteMeeting={ this.deleteMeeting }
-                />
-                <CalendarForm saveMeeting={ this.sendMeetingToApi }/>
-            </section>
+            <StyledCalendar>
+                <Header>
+                    <h1>my meetings</h1>
+                    <img src="../../img/schedule.png" alt="logo" />
+                </Header>
+                <main>
+                    <CalendarList 
+                        meetings={ this.props.meetings }
+                        deleteMeeting={ this.deleteMeeting }
+                    />
+                    <CalendarForm saveMeeting={ this.sendMeetingToApi }/>
+                </main>
+            </StyledCalendar>
         )
     }
 }

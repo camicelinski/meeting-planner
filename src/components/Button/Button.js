@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import StyledButton from './Button.styled'
+
 export const Button = (props) => {
   const {
     className, 
@@ -8,11 +10,11 @@ export const Button = (props) => {
   } = props
 
   return (
-    <button
+    <StyledButton
       className={`${className}`}
       {...otherProps}
     >
-    </button>
+    </StyledButton>
   )
 }
 
