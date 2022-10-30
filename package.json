@@ -29,6 +29,7 @@
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
     "react-redux": "^7.2.9",
-    "redux": "^4.2.0"
+    "redux": "^4.2.0",
+    "styled-components": "^5.3.6"
   }
 }
