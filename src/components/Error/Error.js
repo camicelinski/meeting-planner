@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import StyledError from './Error.styled'
+
 export const Error = (props) => {
   const {
     className,
@@ -8,14 +10,20 @@ export const Error = (props) => {
     ...otherProps
   } = props
 
-  return (
-    <p
+  return(
+    <StyledError /*isCenter={isCenter}*/>
+      <p>{text}</p>
+    </StyledError>
+  )
+
+  /*return (
+    <StyledError
       className='error'
       {...otherProps}
     >
       {text}
-    </p>
-  )
+    </StyledError>
+  )*/
 }
 
 Error.propTypes = {

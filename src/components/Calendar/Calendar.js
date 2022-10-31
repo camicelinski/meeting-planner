@@ -2,9 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { loadMeetingsAction, saveMeetingAction, removeMeetingAction } from '../../actions/calendar';
+import Switcher from '../Switcher'
 import Header from '../Header/Header';
 import CalendarList from '../CalendarList/CalendarList';
-import CalendarForm from '../CalendarForm'
+import CalendarForm from '../CalendarForm/CalendarForm'
 import CalendarAPI from '../../providers/calendarProvider';
 
 import StyledCalendar from './Calendar.styled';
@@ -38,8 +39,14 @@ class Calendar extends React.Component {
     }
 
     render() {
+        const { isDarkMode, toggleTheme } = this.props
         return (
             <StyledCalendar>
+                <Switcher
+                    name={'themeSwitcher'}
+                    isOn={isDarkMode}
+                    handleChange={toggleTheme}
+                />
                 <Header>
                     <h1>my meetings</h1>
                     <img src="../../img/schedule.png" alt="logo" />

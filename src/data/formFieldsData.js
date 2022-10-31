@@ -1,7 +1,7 @@
 const formFields = [
   {
     name: 'date',
-    label: 'Data: ',
+    label: 'data',
     type: 'text',
     placeholder: 'RRRR-MM-DD',
     regExp: /^20\d{2}[-/.](0[1-9]|1[0-2])[-/.](0[1-9]|[12]\d|3[01])$/,
@@ -10,7 +10,7 @@ const formFields = [
   },
   {
     name: 'time',
-    label: 'Godzina: ',
+    label: 'godzina',
     type: 'text',
     placeholder: 'HH:MM',
     regExp: /^((0[8-9]|1[0-9]):[0-5][0-9])$|^(20:00)$/,
@@ -19,7 +19,7 @@ const formFields = [
   },
   {
     name: 'firstName',
-    label: 'Imię: ',
+    label: 'imię',
     type: 'text',
     regExp: /^[a-zA-Z]{3,}(?:(-| )[a-zA-Z]+){0,2}$/,
     err: 'this field requires at least 3 letters',
@@ -27,7 +27,7 @@ const formFields = [
   },
   {
     name: 'lastName',
-    label: 'Nazwisko: ',
+    label: 'nazwisko',
     type: 'text',
     regExp: /^[a-zA-Z]{3,}(?:(-| )[a-zA-Z]+){0,2}$/,
     err: 'this field requires at least 3 letters',
@@ -35,7 +35,7 @@ const formFields = [
   },
   {
     name: 'email',
-    label: 'Email: ',
+    label: 'email',
     type: 'text',
     placeholder: 'nazwa@poczty.pl',
     regExp: /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,

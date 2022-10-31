@@ -1,41 +1,43 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Error from './Error.js'
+import Error from '../Error'
 
-class TextField extends React.Component {
+import StyledFormField from './FormField.styled.js'
+
+class FormField extends React.Component {
   render() {
     const {
       id,
       label,
+      placeholder,
       className,
       errors,
       ...otherProps
     } = this.props
 
     return (
-      <div>
+      <StyledFormField>
+        <input
+          id={id}
+          className={
+            errors.length === 0 ?
+              'form__input'
+              :
+              errors.filter((error) => error.field.name === id).length > 0 ?
+                'form__input input--error'
+                :
+                'form__input'
+          }
+          {...otherProps}
+        >
+        </input>
         <label
           className='form__label'
           htmlFor={id}
-        >
+        >          
           {label}
+          <span>{placeholder}</span>          
         </label>
-        <div className='input__container'>
-          <input
-            id={id}
-            className={
-              errors.length === 0 ?
-                'form__input'
-                :
-                errors.filter((error) => error.field.name === id).length > 0 ?
-                  'form__input input--error'
-                  :
-                  'form__input'
-            }
-            {...otherProps}
-          >
-          </input>
-        </div>
         {
           errors.map((error, index) => {
             return (
@@ -49,16 +51,16 @@ class TextField extends React.Component {
             )
           })
         }
-      </div>
+      </StyledFormField>
     )
   }
 }
 
-TextField.propTypes = {
+FormField.propTypes = {
   id: PropTypes.string,
   label: PropTypes.string,
   errors: PropTypes.arrayOf(PropTypes.object),
   className: PropTypes.string
 }
 
-export default TextField
+export default FormField

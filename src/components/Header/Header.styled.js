@@ -7,7 +7,7 @@ const StyledHeader = styled.header`
 
   img {
     height: 8rem;
-    mix-blend-mode: multiply;
+    mix-blend-mode: darken;
   }
 
   h1 {    

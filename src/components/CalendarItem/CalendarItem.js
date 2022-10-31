@@ -21,15 +21,22 @@ class CalendarItem extends React.Component {
           </a>
         </div> 
         <div className='meeting__info-date'>
-          <span className='meeting__date'><FontAwesomeIcon icon={faCalendarDays} className='meeting__icon' />{item.date}</span>
-          <span className='meeting__time'><FontAwesomeIcon icon={faClock} className='meeting__icon' />{item.time}</span>          
-          <Button 
-            onClick={() => deleteMeeting(item.id)}
-            className='btn btn--delete'
-          >
-            delete
-            <FontAwesomeIcon icon={faTrash} className='meeting__icon--delete' />
-          </Button>
+          <span className='meeting__date'>
+            <FontAwesomeIcon icon={faCalendarDays} className='meeting__icon' />
+            {item.date}
+          </span>
+          <span className='meeting__time'>
+            <FontAwesomeIcon icon={faClock} className='meeting__icon' />
+            {item.time}
+          </span>    
+          <div>      
+            <Button 
+              onClick={() => deleteMeeting(item.id)}
+              className='btn btn--delete'
+            >
+              <FontAwesomeIcon icon={faTrash} className='meeting__icon--delete' />
+            </Button>
+          </div>
         </div>
       </StyledCalendarItem>
     )

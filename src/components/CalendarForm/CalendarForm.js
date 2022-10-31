@@ -1,8 +1,10 @@
 import React from 'react';
 
-import TextField from './FormField';
-import Button from './Button/Button'
-import formFields from '../data/formFieldsData'
+import FormField from '../FormField/FormField';
+import Button from '../Button/Button'
+import formFields from '../../data/formFieldsData'
+
+import StyledCalendarForm from './CalendarForm.styled';
 
 class CalendarForm extends React.Component {
     state = {
@@ -16,24 +18,27 @@ class CalendarForm extends React.Component {
 
     render() {
         return (
-            <form 
+            <StyledCalendarForm 
                 onSubmit={ this.handleSubmit }
                 autoComplete='off'
                 noValidate
             >                
                 <div>
                     {this.renderFields()}
-                    <Button type="submit">
+                    <Button 
+                        className={'btn--submit'}
+                        type="submit"
+                    >
                         zapisz
                     </Button>
                 </div>
-            </form>                
+            </StyledCalendarForm>                
         )
     }
 
     renderFields = () => formFields.map(field => {
         return (
-          <TextField
+          <FormField
           key={field.name}
           id={field.name}
           name={field.name}
