@@ -2,10 +2,10 @@ import styled from 'styled-components'
 
 const StyledCalendarItem = styled.li`
   margin-bottom: 20px;
-  width: 100%;
-  height: calc(100vw - 40px);
+  //height: calc(100vw - 40px);
   //background-color: #66a0ad;
   //border-radius: 15px;
+  width: 100%;
 
   //align-items: center;
   border-radius: var(--radius-primary);
@@ -18,6 +18,10 @@ const StyledCalendarItem = styled.li`
   //padding: 1.25rem;
   transition: box-shadow var(--transition-style);
   //width: 90%;
+
+  @media screen and (min-width: 768px) {   
+    width: calc((100% - 20px)/2);
+  }
 
   div {
     padding: 30px 20px;      
@@ -78,7 +82,8 @@ const StyledCalendarItem = styled.li`
       div {
         display: flex;
         justify-content: end;  
-        padding-right: 0;
+        padding-right: 0;        
+        padding-bottom: 0;
       }       
     }
   } 

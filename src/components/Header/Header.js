@@ -3,8 +3,9 @@ import React from 'react';
 import StyledHeader from './Header.styled';
 
 const Header = (props) => {
+    const { isDarkMode } = props
     return (
-        <StyledHeader>{props.children}</StyledHeader>
+        <StyledHeader isDarkMode={isDarkMode}>{props.children}</StyledHeader>
     );
 }
 

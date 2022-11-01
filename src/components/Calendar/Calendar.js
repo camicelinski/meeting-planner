@@ -47,7 +47,7 @@ class Calendar extends React.Component {
                     isOn={isDarkMode}
                     handleChange={toggleTheme}
                 />
-                <Header>
+                <Header isDarkMode={isDarkMode}>
                     <h1>my meetings</h1>
                     <img src="../../img/schedule.png" alt="logo" />
                 </Header>

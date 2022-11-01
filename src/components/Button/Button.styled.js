@@ -34,6 +34,10 @@ const StyledButton = styled.button`
       background-color: var(--text-highlight);
       color: #fff;
     }
+
+    @media screen and (min-width: 768px) {      
+      margin-top: 25px;
+    }
   }
 
   &.btn--delete {
@@ -59,7 +63,7 @@ const StyledButton = styled.button`
     outline: 1px solid transparent;
     padding: 10px 12px;
     //width: 100%;
-    //transition: box-shadow var(--transition-style);
+    //transition: box-shadow var(--transition-style);    
 
     &:hover {
       color: var(--text-primary);

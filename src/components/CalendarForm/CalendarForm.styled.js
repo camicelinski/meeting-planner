@@ -19,7 +19,8 @@ const StyledCalendarForm = styled.form`
   width: 100%;
 
   @media screen and (min-width: 768px) {      
-    
+    width: 45%;
+    height: max-content;
   }
   
   > div {

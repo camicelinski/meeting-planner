@@ -11,7 +11,7 @@ const StyledHeader = styled.header`
     display: none;
 
     @media screen and (min-width: 768px) {
-      display: block;
+      display: ${({ isDarkMode }) => (isDarkMode ? 'none' : 'block')};
     }
   }
 
