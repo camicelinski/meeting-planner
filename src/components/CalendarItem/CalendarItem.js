@@ -8,14 +8,17 @@ import StyledCalendarItem from './CalendarItem.styled'
 
 class CalendarItem extends React.Component {  
   render() {
-    const { item, deleteMeeting } = this.props
+    const { item, deleteMeeting, className } = this.props
 
     return (
       <StyledCalendarItem
-        className='meeting__item'
+        className={className}
       >
-        <div className='meeting__info-guest'>          
-          <a href={`mailto: ${item.email}`}>
+        <div className={`${className} meeting__info-guest`}>          
+          <a 
+            className={className}
+            href={`mailto: ${item.email}`}
+            >
             <h3 className='meeting__guest'>{item.firstName} {item.lastName}</h3>
             <p className='meeting__email'>{item.email}</p>
           </a>

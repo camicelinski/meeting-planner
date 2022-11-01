@@ -3,6 +3,7 @@ import React from 'react';
 import FormField from '../FormField/FormField';
 import Button from '../Button/Button'
 import formFields from '../../data/formFieldsData'
+import { getCurrentDate } from '../../helpers/helpersFunctions'
 
 import StyledCalendarForm from './CalendarForm.styled';
 
@@ -109,14 +110,10 @@ class CalendarForm extends React.Component {
     }
 
     isFutureDate(inputValue) {
-        const currentDate = this.getCurrentDate();
+        const currentDate = getCurrentDate();
         console.log(new Date(inputValue))
         return new Date(inputValue) >= new Date(currentDate);
     }
-
-    getCurrentDate() {
-        return new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10);
-    }    
     
     inputChange = e => {
         if(this.isFieldNameCorrect(e.target.name)) {

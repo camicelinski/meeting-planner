@@ -19,6 +19,10 @@ const StyledCalendarItem = styled.li`
   transition: box-shadow var(--transition-style);
   //width: 90%;
 
+  &.old-meeting {
+      color: var(--text-user);    
+  }
+
   @media screen and (min-width: 768px) {   
     width: calc((100% - 20px)/2);
   }
@@ -33,17 +37,25 @@ const StyledCalendarItem = styled.li`
       border-top-left-radius: var(--radius-primary);
       border-top-right-radius: var(--radius-primary);
 
+      &.old-meeting {
+        border-bottom: 1px solid var(--text-user);   
+      }
+
       a {
-      text-decoration: none;
-      color: var(--text-primary);
-
-        h3 {
-          font-size: 1.4rem;
+        text-decoration: none;
+        color: var(--text-primary);
+      
+        &.old-meeting {
+            color: var(--text-user);    
         }
 
-        p {
-          font-size: 1rem;
-        }
+          h3 {
+            font-size: 1.4rem;
+          }
+
+          p {
+            font-size: 1rem;
+          }
       }
     }
 
@@ -63,7 +75,7 @@ const StyledCalendarItem = styled.li`
         * {          
           &.meeting__icon {
             margin-right: 10px;
-            color: var(--text-primary);
+            //color: var(--text-primary);
             padding-right: 5px;
 
             background: transparent;
