@@ -75,19 +75,26 @@ class CalendarForm extends React.Component {
             if(required) {
                 if(value.length === 0) {
                     errors.push({
-                    text: 'this field is mandatory',
-                    field: field
+                        text: 'this field is mandatory',
+                        field: field
                     })
                 }      
-            } 
+            }           
             
             if(regExp && value.length > 0) {
                 const reg = new RegExp(regExp)
                 if(!reg.test(value)) {
                     errors.push({
-                    text: err,
-                    field: field
+                        text: err,
+                        field: field
                     })
+                } else if(name === 'date') {
+                    if(!this.isFutureDate(value)) {
+                        errors.push({
+                            text: err,
+                            field: field
+                        })
+                    }
                 }
             }
         })
@@ -100,6 +107,16 @@ class CalendarForm extends React.Component {
             return false
         }
     }
+
+    isFutureDate(inputValue) {
+        const currentDate = this.getCurrentDate();
+        console.log(new Date(inputValue))
+        return new Date(inputValue) >= new Date(currentDate);
+    }
+
+    getCurrentDate() {
+        return new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+    }    
     
     inputChange = e => {
         if(this.isFieldNameCorrect(e.target.name)) {

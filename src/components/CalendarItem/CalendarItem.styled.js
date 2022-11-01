@@ -24,10 +24,12 @@ const StyledCalendarItem = styled.li`
   }
 
   div {
-    padding: 30px 20px;      
+    margin: 0 20px;
+    padding: 30px 0;      
 
     &.meeting__info-guest {
-      background-color: #cecece;
+      //background-color: #cecece;
+      border-bottom: 1px solid var(--text-highlight);
       border-top-left-radius: var(--radius-primary);
       border-top-right-radius: var(--radius-primary);
 
@@ -46,7 +48,7 @@ const StyledCalendarItem = styled.li`
     }
 
     &.meeting__info-date {
-      padding: 20px;
+      padding: 20px 0;
       display: flex;
       flex-direction: column;
 
@@ -61,14 +63,14 @@ const StyledCalendarItem = styled.li`
         * {          
           &.meeting__icon {
             margin-right: 10px;
-            color: var(--text-user);
+            color: var(--text-primary);
             padding-right: 5px;
 
             background: transparent;
             border-radius: 50%;
             border: none;
             box-shadow: 0.3rem 0.3rem 0.6rem var(--color-shadow-primary), -0.2rem -0.2rem 0.5rem var(--color-shadow-secondary);
-            color: var(--text-user);
+            //color: var(--text-user);
             height: 1.2rem;
             letter-spacing: 0.1rem;
             outline: 1px solid transparent;
@@ -82,6 +84,7 @@ const StyledCalendarItem = styled.li`
       div {
         display: flex;
         justify-content: end;  
+        margin: 0;
         padding-right: 0;        
         padding-bottom: 0;
       }       
