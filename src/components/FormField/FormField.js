@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Error from '../Error'
 
 import StyledFormField from './FormField.styled.js'
@@ -54,13 +53,6 @@ class FormField extends React.Component {
       </StyledFormField>
     )
   }
-}
-
-FormField.propTypes = {
-  id: PropTypes.string,
-  label: PropTypes.string,
-  errors: PropTypes.arrayOf(PropTypes.object),
-  className: PropTypes.string
 }
 
 export default FormField

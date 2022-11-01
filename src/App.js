@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import { ResetStyle, GlobalStyle, themeStyle } from './styled'
 
-import useToggle from './hooks/useToggle';
-import Calendar from './components/Calendar/index';
+import useToggle from './hooks/useToggle'
+import Calendar from './components/Calendar/index'
 
 const App = () => {    
   const [isDarkMode, toggleTheme] = useToggle()
@@ -23,4 +23,4 @@ const App = () => {
     
 }
 
-export default App;
+export default App

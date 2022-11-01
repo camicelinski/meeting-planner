@@ -1,14 +1,14 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React from 'react'
+import { connect } from 'react-redux'
 
-import { loadMeetingsAction, saveMeetingAction, removeMeetingAction } from '../../actions/calendar';
+import { loadMeetingsAction, saveMeetingAction, removeMeetingAction } from '../../actions/calendar'
 import Switcher from '../Switcher'
-import Header from '../Header/Header';
-import CalendarList from '../CalendarList/CalendarList';
+import Header from '../Header/Header'
+import CalendarList from '../CalendarList/CalendarList'
 import CalendarForm from '../CalendarForm/CalendarForm'
-import CalendarAPI from '../../providers/calendarProvider';
+import CalendarAPI from '../../providers/calendarProvider'
 
-import StyledCalendar from './Calendar.styled';
+import StyledCalendar from './Calendar.styled'
 
 class Calendar extends React.Component {
     calendarProvider = new CalendarAPI()

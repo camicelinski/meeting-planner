@@ -19,16 +19,16 @@ class CalendarItem extends React.Component {
             className={className}
             href={`mailto: ${item.email}`}
             >
-            <h3 className='meeting__guest'>{item.firstName} {item.lastName}</h3>
-            <p className='meeting__email'>{item.email}</p>
+            <h3>{item.firstName} {item.lastName}</h3>
+            <p>{item.email}</p>
           </a>
         </div> 
         <div className='meeting__info-date'>
-          <span className='meeting__date'>
+          <span>
             <FontAwesomeIcon icon={faCalendarDays} className='meeting__icon' />
             {item.date}
           </span>
-          <span className='meeting__time'>
+          <span>
             <FontAwesomeIcon icon={faClock} className='meeting__icon' />
             {item.time}
           </span>    
@@ -45,21 +45,5 @@ class CalendarItem extends React.Component {
     )
   }  
 }
-/*
-const mapStateToProps = (state, props) => {
-  return {
-    meetings: state.meetings
-  }
-}
 
-const mapActionToProps = {
-  deleteMeeting: removeMeetingAction
-}
-
-CalendarItem.propTypes = {
-  item: PropTypes.object,
-  deleteMeeting: PropTypes.func,
-  className: PropTypes.string
-}
-*/
 export default CalendarItem

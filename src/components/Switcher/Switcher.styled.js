@@ -3,10 +3,7 @@ import styled, { css } from 'styled-components'
 const themeSwitcherStyles = css`
   align-items: center;
   justify-content: flex-end;
-  //max-width: 600px;
   padding-bottom: 1rem;
-  //padding-right: 25px;
-  //width: 90%;
 `
 
 const themeSwitcherLabelStyles = css`

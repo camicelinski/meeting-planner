@@ -5,8 +5,6 @@ const StyledCalendarList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   margin-top: 20px;
-  //width: 55%;
-  //min-width: 150px;
 
   @media screen and (min-width: 768px) {      
     margin-top: 0;

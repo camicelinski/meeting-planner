@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     background: var(--bg-primary);
     color: var(--text-primary);
-    font-family: 'Karla', sans-serif;
+    font-family: 'Karla', Arial, sans-serif;
     transition: background-color var(--transition-style);
   }
 

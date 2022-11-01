@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 
-import FormField from '../FormField/FormField';
+import FormField from '../FormField/FormField'
 import Button from '../Button/Button'
 import formFields from '../../data/formFieldsData'
 import { getCurrentDate } from '../../helpers/helpersFunctions'
 
-import StyledCalendarForm from './CalendarForm.styled';
+import StyledCalendarForm from './CalendarForm.styled'
 
 class CalendarForm extends React.Component {
     state = {
@@ -111,7 +111,6 @@ class CalendarForm extends React.Component {
 
     isFutureDate(inputValue) {
         const currentDate = getCurrentDate();
-        console.log(new Date(inputValue))
         return new Date(inputValue) >= new Date(currentDate);
     }
     
@@ -125,8 +124,6 @@ class CalendarForm extends React.Component {
 
     saveMeeting() {
         const {saveMeeting} = this.props;
-        const l = this.getFieldsData()
-        console.log(l)
 
         if(typeof saveMeeting === 'function') {
             saveMeeting(this.getFieldsData());

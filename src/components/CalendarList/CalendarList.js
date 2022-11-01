@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 
-import CalendarItem from '../CalendarItem';
+import CalendarItem from '../CalendarItem'
 import { getCurrentDate } from '../../helpers/helpersFunctions'
 
-import StyledCalendarList from './CalendarList.styled';
-import StyledCalendarListContainer from './CalendarListContainer.styled';
+import StyledCalendarList from './CalendarList.styled'
+import StyledCalendarListContainer from './CalendarListContainer.styled'
 
 const CalendarList = props => {
     const { meetings, deleteMeeting, ...otherProps } = props 
@@ -12,7 +12,6 @@ const CalendarList = props => {
     const renderMeetingsList = () => {
         const currentDate = getCurrentDate()
         const futureMeetings = meetings.filter(meeting => new Date(meeting.date) >= new Date(currentDate))
-        console.log(futureMeetings)
         const sortedMeetings = futureMeetings.sort((a, b) => new Date(a.date) - new Date(b.date))
         return sortedMeetings.map(item => {
                 return (
@@ -51,12 +50,3 @@ const CalendarList = props => {
 }
 
 export default CalendarList
-
-/*
-<li key={itemData.id}>
-                {itemData.date} {itemData.time} => 
-                <a href={`mailto: ${itemData.email}`}>
-                    {itemData.firstName} {itemData.lastName}
-                </a>
-            </li>
-            */

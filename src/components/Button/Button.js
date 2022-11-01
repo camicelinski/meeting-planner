@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import StyledButton from './Button.styled'
 
@@ -16,10 +15,6 @@ export const Button = (props) => {
     >
     </StyledButton>
   )
-}
-
-Button.propTypes = {
-  className: PropTypes.string
 }
 
 export default Button

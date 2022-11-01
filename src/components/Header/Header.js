@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import StyledHeader from './Header.styled';
+import StyledHeader from './Header.styled'
 
 const Header = (props) => {
     const { isDarkMode } = props
@@ -9,4 +9,4 @@ const Header = (props) => {
     );
 }
 
-export default Header;
+export default Header

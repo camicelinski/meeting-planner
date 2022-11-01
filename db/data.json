@@ -39,6 +39,22 @@
       "date": "2021-10-15",
       "time": "18:00",
       "id": 6
+    },
+    {
+      "firstName": "Mateusz",
+      "lastName": "Palloy",
+      "email": "palloy@ha.pl",
+      "date": "2022-11-01",
+      "time": "19:00",
+      "id": 7
+    },
+    {
+      "firstName": "Diego",
+      "lastName": "Madas",
+      "email": "diego@mad.pl",
+      "date": "2022-12-23",
+      "time": "15:00",
+      "id": 8
     }
   ]
 }
