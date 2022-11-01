@@ -9,17 +9,22 @@ const StyledButton = styled.button`
   letter-spacing: 0.1rem;
   padding: 0.75rem 0;
   transition: color var(--transition-style), background-color var(--transition-style), box-shadow var(--transition-style);  
-  min-width: 100px;
-  padding: 8px;
+  //min-width: 100px;
+  //padding: 8px;
   font-size: 1rem;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  //border-radius: 5px;
+  //cursor: pointer;
   transition: all 0.5s ease-in-out;
 
+  :active {
+    box-shadow: inset 0.2rem 0.2rem 0.5rem var(--color-shadow-primary), inset -0.2rem -0.2rem 0.5rem var(--color-shadow-secondary);
+  }
+
   &.btn--submit {
-    width: 70%;
-    margin: 10px 15%;
+    width: max-content;
+    margin: 20px auto 10px;
+    padding: 8px 20px;
     //color: #000;
     //background-color: #f6b93b;
     text-transform: uppercase;
@@ -35,7 +40,7 @@ const StyledButton = styled.button`
     min-width: 0;
     width: max-content;
     //text-align: right;
-    margin-bottom: 5px;
+    //margin-bottom: 20px;
     //width: 70%;
     //height: min-content;
     //color: #e3e3e3;
@@ -59,10 +64,6 @@ const StyledButton = styled.button`
     &:hover {
       color: var(--text-primary);
     }
-  }
-  
-  :active {
-    box-shadow: inset 0.2rem 0.2rem 0.5rem var(--color-shadow-primary), inset -0.2rem -0.2rem 0.5rem var(--color-shadow-secondary);
   }
   
   @media screen and (min-width: 960px) {

@@ -15,6 +15,22 @@
       "date": "2022-08-08",
       "time": "09:00",
       "id": 2
+    },
+    {
+      "firstName": "Joanna",
+      "lastName": "Skrzek",
+      "email": "joanna@skrzek.pl",
+      "date": "2022-12-12",
+      "time": "14:00",
+      "id": 3
+    },
+    {
+      "firstName": "Jan",
+      "lastName": "Winiarski",
+      "email": "jan@wini.pl",
+      "date": "2022-11-11",
+      "time": "15:00",
+      "id": 4
     }
   ]
 }

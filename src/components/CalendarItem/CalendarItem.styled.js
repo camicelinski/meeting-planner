@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 const StyledCalendarItem = styled.li`
-  margin: 10px;
-  width: 250px;
-  height: 250px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: calc(100vw - 40px);
   //background-color: #66a0ad;
   //border-radius: 15px;
 
@@ -20,7 +20,7 @@ const StyledCalendarItem = styled.li`
   //width: 90%;
 
   div {
-    padding: 15px;    
+    padding: 30px 20px;      
 
     &.meeting__info-guest {
       background-color: #cecece;
@@ -32,24 +32,24 @@ const StyledCalendarItem = styled.li`
       color: var(--text-primary);
 
         h3 {
-          font-size: 1.2rem;
+          font-size: 1.4rem;
         }
 
         p {
-          font-size: 0.9rem;
+          font-size: 1rem;
         }
       }
     }
 
     &.meeting__info-date {
-      padding: 15px;
+      padding: 20px;
       display: flex;
       flex-direction: column;
 
       span {          
-        padding: 5px 0;
+        padding: 7px 0;
         font-family: 'Rubik', Arial, sans-serif;
-        font-size: 0.9rem;
+        font-size: 1rem;
         //letter-spacing: 0.1rem;
         display: flex;
         align-items: center;
@@ -77,7 +77,8 @@ const StyledCalendarItem = styled.li`
 
       div {
         display: flex;
-        justify-content: end;
+        justify-content: end;  
+        padding-right: 0;
       }       
     }
   } 

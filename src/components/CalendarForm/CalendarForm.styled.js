@@ -2,9 +2,9 @@ import styled from 'styled-components'
 
 const StyledCalendarForm = styled.form`
   //background-color: #66a0ad;
-  margin: 10px;
-  padding: 15px;
-  border-radius: 15px;
+ // margin: 10px;
+  //padding: 15px;
+  //border-radius: 15px;
 
   align-items: center;
   border-radius: var(--radius-primary);
@@ -12,11 +12,15 @@ const StyledCalendarForm = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-width: 450px;
-  min-height: 450px;
+  //max-width: 450px;
+  //min-height: 450px;
   padding: 1.25rem;
   transition: box-shadow var(--transition-style);
-  width: 90%;
+  width: 100%;
+
+  @media screen and (min-width: 768px) {      
+    
+  }
   
   > div {
     display: flex;
