@@ -32,10 +32,15 @@ class Calendar extends React.Component {
     }
 
     deleteMeeting = (id) => {
-        this.calendarProvider.remove(id)            
-            .then(() => {
-                this.loadMeetingsList()
-            })    
+        if(window.confirm('Czy na pewno chcesz usunąć spotkanie?') === true) {
+            this.calendarProvider.remove(id)            
+                .then(() => {
+                    this.loadMeetingsList()
+                })    
+        } else {
+            alert('Usuwanie spotkanie zostało anulowane.')
+        }
+        
     }
 
     render() {
