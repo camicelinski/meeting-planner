@@ -63,6 +63,14 @@
       "date": "2022-11-28",
       "time": "10:00",
       "id": 9
+    },
+    {
+      "firstName": "Filip",
+      "lastName": "Swajda",
+      "email": "fi.swajda@pls.pl",
+      "date": "2023-04-10",
+      "time": "15:00",
+      "id": 10
     }
   ]
 }
